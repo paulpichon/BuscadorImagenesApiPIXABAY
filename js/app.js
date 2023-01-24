@@ -26,6 +26,10 @@ function validarFormulario( e ) {
         return;
     }
 
+    //funcion para buscar las imagenes y le pasamos como argumento el termino de la busqueda
+    buscarImagenes( terminoBusqueda );
+
+
 }
 //funcion para mostrar alerta
 function mostrarAlerta( mensaje ) {
@@ -54,4 +58,22 @@ function mostrarAlerta( mensaje ) {
     }
 
     
+}
+
+//funcion para buscar el termino de la buscada
+function buscarImagenes( termino ) {
+    //llave de la API
+    const key = '30907566-3221c4d1c76ae349991022cae';
+    //url de los endpoints
+    const url = `https://pixabay.com/api/?key=${ key }&q=${ termino }&image_type=photo`;
+
+    fetch( url )
+        .then( respuesta => respuesta.json() )
+        .then( resultado => mostrarImagenes( resultado.hits ) )
+
+}
+
+//funcion para mostrar las imagenes
+function mostrarImagenes( imagenes ) {
+
 }
