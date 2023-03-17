@@ -5,7 +5,7 @@ import { mostrarImagenes } from "./mostrar-imagenes.js";
 //funcion para hacer la peticion a la API
 //desetructuramos desde los parametros
 const consultarBusquedaApi = async( { termino } ) => {
-    //variable totalPaginas
+    //variable para total paginas
     let totalPaginas;
     //apikey
     const key = '30907566-3221c4d1c76ae349991022cae';
@@ -16,13 +16,13 @@ const consultarBusquedaApi = async( { termino } ) => {
     await fetch( url )
         .then( response => response.json() )
             .then( resultado => {
-                //total de paginas, para hacer el paginador
-                totalPaginas = calcularPaginas( resultado.totalHits );
+                //funcion para calcular las paginas, para hacer el paginador
+                totalPaginas = calcularPaginas( resultado.totalHits);
+                console.log( totalPaginas, "toal de paginas");
 
-                console.log( totalPaginas );
-                //mostrar resultados
-                mostrarImagenes(  resultado.hits )
-            })
+                //mostrar las imagenes
+                mostrarImagenes(  resultado.hits );
+            });
 }
 
 export {
