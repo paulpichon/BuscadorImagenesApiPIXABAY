@@ -1,5 +1,7 @@
 //importar funcion para mostrar una alerta
 import { mostrarAlerta } from "./mostrar-alerta.js";
+//importar funcion buscar imagenes
+import { buscarImagenes } from "./buscar-imagenes.js";
 
 //funcion para validar el formulario
 export const validarFormulario = ( e ) => {
@@ -14,7 +16,10 @@ export const validarFormulario = ( e ) => {
     //verificar que no este vacio el objeto
     if ( Object.keys( terminoObj.termino ).length === 0 ) {
         //mostrar alerta
-        mostrarAlerta('¡El campo esta vacio!');
+        return mostrarAlerta('¡El campo esta vacio!');
     }
+
+    //funcion hacer la consulta a la api
+    buscarImagenes( terminoObj.termino );
 
 }
