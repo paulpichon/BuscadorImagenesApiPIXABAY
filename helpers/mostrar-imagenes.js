@@ -1,3 +1,4 @@
+import { imprimirPaginador } from "./imprimir-paginador.js";
 import { limpiarHTML } from "./limpiar-html.js";
 
 //funcion para mostrar las imagenes
@@ -73,4 +74,8 @@ export const mostrarImagenes = (  imagenes ) => {
 
 
     });
+
+    //imprimir el paginador
+    imprimirPaginador();
+
 }
