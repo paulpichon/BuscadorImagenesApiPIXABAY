@@ -1,17 +1,16 @@
 import { imprimirPaginador } from "./imprimir-paginador.js";
 import { limpiarHTML } from "./limpiar-html.js";
 
-//funcion para mostrar las imagenes
-export const mostrarImagenes = (  imagenes ) => {
-    //referencia al html
+//funcion para mostrar als imagenes
+export const mostrarImagenes = ( imagenes ) => {
+    //resultados
     const resultados = document.querySelector('#resultado');
-    //limpiar el HTML
-    limpiarHTML(resultados);
-
-    //iteramos
-    imagenes.forEach( resultado => {
+    //limpiar el html
+    limpiarHTML( resultados );
+    //iterrar el arreglo
+    imagenes.forEach( image => {
         //destructuring
-        const { views, likes, previewURL, largeImageURL } = resultado;
+        const { largeImageURL, likes, previewURL, views } = image;
 
         //html
         //contenedor
@@ -72,10 +71,13 @@ export const mostrarImagenes = (  imagenes ) => {
         resultados.appendChild( divContenedor );
         // console.log(divContenedor);
 
-
     });
+<<<<<<< HEAD:helpers/mostrar-imagenes.js
 
     //imprimir el paginador
     imprimirPaginador();
 
 }
+=======
+}
+>>>>>>> ed5ba127bd6fdd6930ece8c13aa924d9f095e55b:js/mostrar-imagenes.js
